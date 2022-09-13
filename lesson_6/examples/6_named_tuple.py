@@ -9,7 +9,7 @@ print(p)
 
 # Get x from point
 print(p[0])  # Use index
-print(p.x)  # Use field
+print(p.y)  # Use field
 
 # Namedtuple example
 Fullname = namedtuple('Fullname', ['first', 'last'])
