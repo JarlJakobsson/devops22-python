@@ -1,5 +1,5 @@
 from operator import itemgetter, mul
-from random import shuffle, choices, sample
+from random import randint, shuffle, choices, sample
 from stringprep import c22_specials
 from typing import Counter
 import string
@@ -102,11 +102,13 @@ for x in range(len(alphabet)):
 names_two = ["lisa", "olle", "pelle", "johan", "markus"]
 names_two = random.choices((names), k = 50)
 
+#4.2
 queue = deque(names_two, maxlen=10)
 print("* ORIGINAL QUEUE *")
 print(queue)
 
-rand_num = random.sample(range(0,len(queue)),k = 1)
+#4.3
+rand_num = random.randint(0,len(queue))
 print("* RANDOM NUMBER *")
 print(rand_num)
 
@@ -114,3 +116,11 @@ for i in range(rand_num):
     queue.pop()
 print("* POPPED QUEUE *")
 print(queue)
+
+#4.4
+queue.extend(random.choices((names_two), k = rand_num))
+print("* NEW QUEUE *")
+print(queue)
+print("* NAMES TWO *")
+print(names_two)
+    
