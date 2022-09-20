@@ -75,7 +75,7 @@ class Team:
         return team
 
 def get_birth():
-    birth = randint(1989, 2003)
+    birth = randint(1985, 2004)
     return birth
 
 def get_voice():

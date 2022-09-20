@@ -6,7 +6,7 @@ class Animal:
         return "Animal"
 
 class Menu:
-    my_object = None
+    my_animal = None
     menu_text = """
 '-------------------------'
 '------- Main Menu -------'
@@ -26,24 +26,28 @@ class Menu:
 
     def menu_choice(self, choice):
         if choice == 1:
-            self.my_object = Animal()
-            print("Created Animal")
+            self.my_animal = Animal()
+            print("*** Animal created ***")
 
         elif choice == 2:
-            if not self.my_object:
-                print("No object available to print")
+            if not self.my_animal:
+                print("*** No object available to print ***")
             else:
-                print(self.my_object)
+                print(self.my_animal)
 
         elif choice == 3:
-            if self.my_object:
-                del(self.my_object)
-                print("Deleted")
+            if self.my_animal:
+                del(self.my_animal)
+                print("*** Deleted ***")
             else:
-                print("No object to delete")
+                print("*** No object to delete ***")
 
     def user_input(self):
-        return int(input("Enter your choice:\n: "))
+        try:
+            return int(input("Enter your choice:\n: "))
+        except:
+            print("*** Somethig went wrong ***")
+            pass
 
 if __name__ == '__main__':
     Menu().menu_loop()
